@@ -7,32 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA20EFA01F9C555A003F600F /* PreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20EF9F1F9C555A003F600F /* PreviewView.m */; };
-		DAD89C711F96F18700298F08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD89C701F96F18700298F08 /* AppDelegate.m */; };
-		DAD89C741F96F18700298F08 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD89C731F96F18700298F08 /* ViewController.m */; };
-		DAD89C771F96F18700298F08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD89C751F96F18700298F08 /* Main.storyboard */; };
-		DAD89C791F96F18700298F08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD89C781F96F18700298F08 /* Assets.xcassets */; };
-		DAD89C7C1F96F18700298F08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD89C7A1F96F18700298F08 /* LaunchScreen.storyboard */; };
-		DAD89C7F1F96F18700298F08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD89C7E1F96F18700298F08 /* main.m */; };
+		DA20EFAF1F9CE6A4003F600F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20EFAE1F9CE6A4003F600F /* AppDelegate.m */; };
+		DA20EFB51F9CE6A4003F600F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA20EFB31F9CE6A4003F600F /* Main.storyboard */; };
+		DA20EFB71F9CE6A4003F600F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA20EFB61F9CE6A4003F600F /* Assets.xcassets */; };
+		DA20EFBA1F9CE6A4003F600F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA20EFB81F9CE6A4003F600F /* LaunchScreen.storyboard */; };
+		DA20EFBD1F9CE6A4003F600F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20EFBC1F9CE6A4003F600F /* main.m */; };
+		DA20EFC51F9CE6EE003F600F /* PreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20EFC41F9CE6EE003F600F /* PreviewView.m */; };
+		DA20EFC71F9CECCF003F600F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20EFC61F9CECCF003F600F /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA20EF9E1F9C555A003F600F /* PreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewView.h; sourceTree = "<group>"; };
-		DA20EF9F1F9C555A003F600F /* PreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewView.m; sourceTree = "<group>"; };
-		DAD89C6C1F96F18700298F08 /* SourceCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SourceCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAD89C6F1F96F18700298F08 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		DAD89C701F96F18700298F08 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DAD89C721F96F18700298F08 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DAD89C731F96F18700298F08 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		DAD89C761F96F18700298F08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DAD89C781F96F18700298F08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DAD89C7B1F96F18700298F08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DAD89C7D1F96F18700298F08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAD89C7E1F96F18700298F08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA20EFAA1F9CE6A4003F600F /* AVPhotoCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVPhotoCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA20EFAD1F9CE6A4003F600F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA20EFAE1F9CE6A4003F600F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DA20EFB01F9CE6A4003F600F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DA20EFB41F9CE6A4003F600F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA20EFB61F9CE6A4003F600F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA20EFB91F9CE6A4003F600F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA20EFBB1F9CE6A4003F600F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA20EFBC1F9CE6A4003F600F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA20EFC31F9CE6EE003F600F /* PreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewView.h; sourceTree = "<group>"; };
+		DA20EFC41F9CE6EE003F600F /* PreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewView.m; sourceTree = "<group>"; };
+		DA20EFC61F9CECCF003F600F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DAD89C691F96F18700298F08 /* Frameworks */ = {
+		DA20EFA71F9CE6A4003F600F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,76 +42,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DAD89C631F96F18700298F08 = {
+		DA20EFA11F9CE6A4003F600F = {
 			isa = PBXGroup;
 			children = (
-				DAD89C6E1F96F18700298F08 /* SourceCapture */,
-				DAD89C6D1F96F18700298F08 /* Products */,
+				DA20EFAC1F9CE6A4003F600F /* AVPhotoCapture */,
+				DA20EFAB1F9CE6A4003F600F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		DAD89C6D1F96F18700298F08 /* Products */ = {
+		DA20EFAB1F9CE6A4003F600F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DAD89C6C1F96F18700298F08 /* SourceCapture.app */,
+				DA20EFAA1F9CE6A4003F600F /* AVPhotoCapture.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DAD89C6E1F96F18700298F08 /* SourceCapture */ = {
+		DA20EFAC1F9CE6A4003F600F /* AVPhotoCapture */ = {
 			isa = PBXGroup;
 			children = (
-				DAD89C6F1F96F18700298F08 /* AppDelegate.h */,
-				DAD89C701F96F18700298F08 /* AppDelegate.m */,
-				DA20EF9E1F9C555A003F600F /* PreviewView.h */,
-				DA20EF9F1F9C555A003F600F /* PreviewView.m */,
-				DAD89C721F96F18700298F08 /* ViewController.h */,
-				DAD89C731F96F18700298F08 /* ViewController.m */,
-				DAD89C751F96F18700298F08 /* Main.storyboard */,
-				DAD89C781F96F18700298F08 /* Assets.xcassets */,
-				DAD89C7A1F96F18700298F08 /* LaunchScreen.storyboard */,
-				DAD89C7D1F96F18700298F08 /* Info.plist */,
-				DAD89C7E1F96F18700298F08 /* main.m */,
+				DA20EFAD1F9CE6A4003F600F /* AppDelegate.h */,
+				DA20EFAE1F9CE6A4003F600F /* AppDelegate.m */,
+				DA20EFC31F9CE6EE003F600F /* PreviewView.h */,
+				DA20EFC41F9CE6EE003F600F /* PreviewView.m */,
+				DA20EFB01F9CE6A4003F600F /* ViewController.h */,
+				DA20EFC61F9CECCF003F600F /* ViewController.m */,
+				DA20EFB31F9CE6A4003F600F /* Main.storyboard */,
+				DA20EFB61F9CE6A4003F600F /* Assets.xcassets */,
+				DA20EFB81F9CE6A4003F600F /* LaunchScreen.storyboard */,
+				DA20EFBB1F9CE6A4003F600F /* Info.plist */,
+				DA20EFBC1F9CE6A4003F600F /* main.m */,
 			);
-			path = SourceCapture;
+			path = AVPhotoCapture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DAD89C6B1F96F18700298F08 /* SourceCapture */ = {
+		DA20EFA91F9CE6A4003F600F /* AVPhotoCapture */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DAD89C821F96F18700298F08 /* Build configuration list for PBXNativeTarget "SourceCapture" */;
+			buildConfigurationList = DA20EFC01F9CE6A4003F600F /* Build configuration list for PBXNativeTarget "AVPhotoCapture" */;
 			buildPhases = (
-				DAD89C681F96F18700298F08 /* Sources */,
-				DAD89C691F96F18700298F08 /* Frameworks */,
-				DAD89C6A1F96F18700298F08 /* Resources */,
+				DA20EFA61F9CE6A4003F600F /* Sources */,
+				DA20EFA71F9CE6A4003F600F /* Frameworks */,
+				DA20EFA81F9CE6A4003F600F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SourceCapture;
-			productName = SourceCapture;
-			productReference = DAD89C6C1F96F18700298F08 /* SourceCapture.app */;
+			name = AVPhotoCapture;
+			productName = AVPhotoCapture;
+			productReference = DA20EFAA1F9CE6A4003F600F /* AVPhotoCapture.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DAD89C641F96F18700298F08 /* Project object */ = {
+		DA20EFA21F9CE6A4003F600F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = sonirock;
+				ORGANIZATIONNAME = "黄梦轩";
 				TargetAttributes = {
-					DAD89C6B1F96F18700298F08 = {
+					DA20EFA91F9CE6A4003F600F = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = DAD89C671F96F18700298F08 /* Build configuration list for PBXProject "SourceCapture" */;
+			buildConfigurationList = DA20EFA51F9CE6A4003F600F /* Build configuration list for PBXProject "AVPhotoCapture" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -119,56 +119,56 @@
 				en,
 				Base,
 			);
-			mainGroup = DAD89C631F96F18700298F08;
-			productRefGroup = DAD89C6D1F96F18700298F08 /* Products */;
+			mainGroup = DA20EFA11F9CE6A4003F600F;
+			productRefGroup = DA20EFAB1F9CE6A4003F600F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DAD89C6B1F96F18700298F08 /* SourceCapture */,
+				DA20EFA91F9CE6A4003F600F /* AVPhotoCapture */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DAD89C6A1F96F18700298F08 /* Resources */ = {
+		DA20EFA81F9CE6A4003F600F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAD89C7C1F96F18700298F08 /* LaunchScreen.storyboard in Resources */,
-				DAD89C791F96F18700298F08 /* Assets.xcassets in Resources */,
-				DAD89C771F96F18700298F08 /* Main.storyboard in Resources */,
+				DA20EFBA1F9CE6A4003F600F /* LaunchScreen.storyboard in Resources */,
+				DA20EFB71F9CE6A4003F600F /* Assets.xcassets in Resources */,
+				DA20EFB51F9CE6A4003F600F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DAD89C681F96F18700298F08 /* Sources */ = {
+		DA20EFA61F9CE6A4003F600F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAD89C741F96F18700298F08 /* ViewController.m in Sources */,
-				DA20EFA01F9C555A003F600F /* PreviewView.m in Sources */,
-				DAD89C7F1F96F18700298F08 /* main.m in Sources */,
-				DAD89C711F96F18700298F08 /* AppDelegate.m in Sources */,
+				DA20EFC51F9CE6EE003F600F /* PreviewView.m in Sources */,
+				DA20EFBD1F9CE6A4003F600F /* main.m in Sources */,
+				DA20EFC71F9CECCF003F600F /* ViewController.m in Sources */,
+				DA20EFAF1F9CE6A4003F600F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DAD89C751F96F18700298F08 /* Main.storyboard */ = {
+		DA20EFB31F9CE6A4003F600F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DAD89C761F96F18700298F08 /* Base */,
+				DA20EFB41F9CE6A4003F600F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		DAD89C7A1F96F18700298F08 /* LaunchScreen.storyboard */ = {
+		DA20EFB81F9CE6A4003F600F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DAD89C7B1F96F18700298F08 /* Base */,
+				DA20EFB91F9CE6A4003F600F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -176,7 +176,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DAD89C801F96F18700298F08 /* Debug */ = {
+		DA20EFBE1F9CE6A4003F600F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -231,7 +231,7 @@
 			};
 			name = Debug;
 		};
-		DAD89C811F96F18700298F08 /* Release */ = {
+		DA20EFBF1F9CE6A4003F600F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -280,29 +280,27 @@
 			};
 			name = Release;
 		};
-		DAD89C831F96F18700298F08 /* Debug */ = {
+		DA20EFC11F9CE6A4003F600F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q9WZPGLPG5;
-				INFOPLIST_FILE = SourceCapture/Info.plist;
+				INFOPLIST_FILE = AVPhotoCapture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sonirock.SourceCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sandy.AVPhotoCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		DAD89C841F96F18700298F08 /* Release */ = {
+		DA20EFC21F9CE6A4003F600F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q9WZPGLPG5;
-				INFOPLIST_FILE = SourceCapture/Info.plist;
+				INFOPLIST_FILE = AVPhotoCapture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sonirock.SourceCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sandy.AVPhotoCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -311,25 +309,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DAD89C671F96F18700298F08 /* Build configuration list for PBXProject "SourceCapture" */ = {
+		DA20EFA51F9CE6A4003F600F /* Build configuration list for PBXProject "AVPhotoCapture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DAD89C801F96F18700298F08 /* Debug */,
-				DAD89C811F96F18700298F08 /* Release */,
+				DA20EFBE1F9CE6A4003F600F /* Debug */,
+				DA20EFBF1F9CE6A4003F600F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DAD89C821F96F18700298F08 /* Build configuration list for PBXNativeTarget "SourceCapture" */ = {
+		DA20EFC01F9CE6A4003F600F /* Build configuration list for PBXNativeTarget "AVPhotoCapture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DAD89C831F96F18700298F08 /* Debug */,
-				DAD89C841F96F18700298F08 /* Release */,
+				DA20EFC11F9CE6A4003F600F /* Debug */,
+				DA20EFC21F9CE6A4003F600F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = DAD89C641F96F18700298F08 /* Project object */;
+	rootObject = DA20EFA21F9CE6A4003F600F /* Project object */;
 }

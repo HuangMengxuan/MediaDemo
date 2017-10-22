@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AVPhotoCapture/AVPhotoCapture.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SourceCapture/SourceCapture.xcodeproj">
    </FileRef>
 </Workspace>
