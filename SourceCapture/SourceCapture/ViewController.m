@@ -11,28 +11,30 @@
 #import "ViewController.h"
 #import "PreviewView.h"
 
-typedef NS_ENUM(NSInteger, HMXCaptureMode) {
-    HMXCaptureModePhoto = 0,
-    HMXCaptureModeMovie = 1
+typedef NS_ENUM(NSInteger, AVDeviceSetupResult) {
+    AVDeviceSetupResultSuccess = 1,
+    AVDeviceSetupResultNotAuthorized = 2,
+    AVDeviceSetupResultConfigureSeesionFailed = 3
 };
 
 
-@interface ViewController () <AVCapturePhotoCaptureDelegate, AVCaptureFileOutputRecordingDelegate>
+@interface ViewController () <AVCaptureFileOutputRecordingDelegate>
 
 @property (weak, nonatomic) IBOutlet PreviewView *myPreviewView;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *myCaptureModeSegment;
 @property (weak, nonatomic) IBOutlet UIButton *myRecordButton;
-@property (weak, nonatomic) IBOutlet UIButton *myPhotoButton;
 @property (weak, nonatomic) IBOutlet UIButton *myCameraButton;
+
 
 @property (strong, nonatomic) AVCaptureSession *mSession;
 @property (strong, nonatomic) AVCaptureDeviceDiscoverySession *mDiscoverySession;
+@property (strong, nonatomic) AVCaptureDevice *mCaptureDevice;
 @property (strong, nonatomic) AVCaptureDeviceInput *mVideoDeviceInput;
 @property (strong, nonatomic) AVCaptureDeviceInput *mAudioDeviceInput;
-@property (strong, nonatomic) AVCapturePhotoOutput *mPhotoOutput;
-@property (strong, nonatomic) AVCaptureMovieFileOutput *mMovieOutput;
+@property (strong, nonatomic) AVCaptureMovieFileOutput *mMovieFileOutput;
 
-@property (assign, nonatomic) HMXCaptureMode mCaptureMode;
+@property (strong, nonatomic) dispatch_queue_t mSessionQueue;
+
+@property (assign, nonatomic) AVDeviceSetupResult mDeviceSetupResult;
 
 @end
 
@@ -41,91 +43,148 @@ typedef NS_ENUM(NSInteger, HMXCaptureMode) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Create a AVCaptureSession
-    self.mSession = [[AVCaptureSession alloc] init];
+    // Create queue for comminute with AVCaptureSession
+    self.mSessionQueue = dispatch_queue_create("capture session queue", DISPATCH_QUEUE_SERIAL);
     
-    // Create a device discovery session
-    NSArray *deviceTypes = @[AVCaptureDeviceTypeBuiltInDualCamera, AVCaptureDeviceTypeBuiltInWideAngleCamera];
-    self.mDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:deviceTypes mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionUnspecified];
+    self.mDeviceSetupResult = AVDeviceSetupResultSuccess;
+    [self checkDeviceAuthorization];
     
-    /* discuss
-     1. AVCaptureDeviceType
-     2. AVMediaType
-     3. AVCaptureDevicePosition
-     */
-    
-    // Set up perview session
-    self.myPreviewView.session = self.mSession;
-    
+    dispatch_async(self.mSessionQueue, ^{
+        [self configureCaptureSession];
+    });
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self configureSession];
-    [self.mSession startRunning];
-    
+    dispatch_async(self.mSessionQueue, ^{
+        switch (self.mDeviceSetupResult) {
+            case AVDeviceSetupResultSuccess:
+                [self.mSession startRunning];
+                break;
+            case AVDeviceSetupResultNotAuthorized:
+                
+                break;
+            case AVDeviceSetupResultConfigureSeesionFailed:
+                
+                break;
+        }
+    });
 }
 
-- (void)configureSession {
-    NSError *error = nil;
-    
-    [self.mSession beginConfiguration];
-    
-    // Set session preset
-    self.mSession.sessionPreset = AVCaptureSessionPresetPhoto;
-    
-    /* discuss
-     AVCaptureDeviceTypeBuiltInDualCamera 时创建失败
-     AVCaptureDeviceTypeBuiltInWideAngleCamera 成功
-     */
-    
-    // Choose camera
-    AVCaptureDevice *videoDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
-    
-    // obtain video device input
-    AVCaptureDeviceInput *videoDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice error:&error];
-    if (!videoDeviceInput) {
-        NSLog(@"videoDeviceInput Error");
+- (void)checkDeviceAuthorization {
+    AVAuthorizationStatus authorizationStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    switch (authorizationStatus) {
+        case AVAuthorizationStatusNotDetermined: {
+            // the user has not yet made a choice regarding whether the client can access the hardware
+            dispatch_suspend(self.mSessionQueue);
+            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+                if (!granted) {
+                    NSLog(@"not authorized!");
+                    self.mDeviceSetupResult = AVDeviceSetupResultNotAuthorized;
+                }
+                dispatch_resume(self.mSessionQueue);
+            }];
+        }
+            break;
+        case AVAuthorizationStatusRestricted:
+            // the client is not authorized to access the hardware for the media type. the user cannot change the client's status.
+            self.mDeviceSetupResult = AVDeviceSetupResultNotAuthorized;
+            break;
+        case AVAuthorizationStatusDenied:
+            // the user explicitly denied access to the hardware supporting a media type for the client.
+            self.mDeviceSetupResult = AVDeviceSetupResultNotAuthorized;
+            break;
+        case AVAuthorizationStatusAuthorized:
+            // the client is authorized to access the hardware supporting a meida type.
+            
+            break;
+    }
+}
+
+- (void)configureCaptureSession {
+    if (self.mDeviceSetupResult != AVDeviceSetupResultSuccess) {
+        return;
     }
     
-    // Add video device input to session
+    NSError *error;
+    
+    // Create the AVCaptureSession
+    self.mSession = [[AVCaptureSession alloc] init];
+    
+    // Set up session preset
+    self.mSession.sessionPreset = AVCaptureSessionPresetHigh;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // Set up the preview view
+        self.myPreviewView.session = self.mSession;
+    });
+    
+    // Create the
+    NSArray<AVCaptureDeviceType> *deviceTypes = @[AVCaptureDeviceTypeBuiltInDualCamera, AVCaptureDeviceTypeBuiltInWideAngleCamera];
+    self.mDiscoverySession = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:deviceTypes mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionUnspecified];
+    
+    // Choose video device
+    // First choose the back dual camera, otherwise default to a back wide angle camera
+    // If the back wide angle camera is not available, default to the front wide angle camera
+    AVCaptureDevice *videoDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInDualCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
+    if (videoDevice == nil) {
+        videoDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack];
+        
+        if (videoDevice == nil) {
+            videoDevice = [AVCaptureDevice defaultDeviceWithDeviceType:AVCaptureDeviceTypeBuiltInWideAngleCamera mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionFront];
+        }
+    }
+    
+    if (videoDevice == nil) {
+        self.mDeviceSetupResult = AVDeviceSetupResultConfigureSeesionFailed;
+        NSLog(@"Obtain video capture device failed.");
+        return;
+    }
+    
+    // Obtain video input
+    AVCaptureDeviceInput *videoDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice error:&error];
+    if (videoDeviceInput == nil) {
+        NSLog(@"Could not create video device input, %@", error);
+        self.mDeviceSetupResult = AVDeviceSetupResultConfigureSeesionFailed;
+        return;
+    }
+    
+    // Obtain audio input
+    AVCaptureDevice *audioDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio];
+    AVCaptureDeviceInput *audioDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:audioDevice error:&error];
+    if (audioDeviceInput == nil) {
+        NSLog(@"Could not create audio device input, %@", error);
+    }
+    
+    // Obtain photo output
+    AVCaptureMovieFileOutput *movieFileOutput = [[AVCaptureMovieFileOutput alloc] init];
+    
+    // Configure session
+    [self.mSession beginConfiguration];
+    
+    // Add video input
     if ([self.mSession canAddInput:videoDeviceInput]) {
         [self.mSession addInput:videoDeviceInput];
         self.mVideoDeviceInput = videoDeviceInput;
     }
     
-    // Add audio device input to session
-    AVCaptureDevice *audioDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio];
-    AVCaptureDeviceInput *audioDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:audioDevice error:&error];
-    if (!audioDeviceInput) {
-        NSLog(@"Could not create audio device input to the session");
+    // Add audio input
+    if (audioDeviceInput) {
+        if ([self.mSession canAddInput:audioDeviceInput]) {
+            [self.mSession addInput:audioDeviceInput];
+            self.mAudioDeviceInput = audioDeviceInput;
+        }
     }
     
-    if ([self.mSession canAddInput:audioDeviceInput]) {
-        [self.mSession addInput:audioDeviceInput];
-        self.mAudioDeviceInput = audioDeviceInput;
-    }
-    
-    // Add photo output to session
-    AVCapturePhotoOutput *photoOutput = [[AVCapturePhotoOutput alloc] init];
-    if ([self.mSession canAddOutput:photoOutput]) {
-        [self.mSession addOutput:photoOutput];
-        self.mPhotoOutput = photoOutput;
+    // Add photo output
+    if ([self.mSession canAddOutput:movieFileOutput]) {
+        [self.mSession addOutput:movieFileOutput];
+        self.mMovieFileOutput = movieFileOutput;
         
-        self.mPhotoOutput.highResolutionCaptureEnabled = YES;
-        self.mPhotoOutput.livePhotoCaptureEnabled = self.mPhotoOutput.livePhotoCaptureSupported;
-        self.mPhotoOutput.depthDataDeliveryEnabled = self.mPhotoOutput.depthDataDeliverySupported;
     }
     
     [self.mSession commitConfiguration];
-}
-
-- (void)startRecording {
-    
-}
-
-- (void)stopRecording {
     
 }
 
@@ -182,153 +241,36 @@ typedef NS_ENUM(NSInteger, HMXCaptureMode) {
             [self.mSession addInput:self.mVideoDeviceInput];
         }
         
-        self.mPhotoOutput.livePhotoCaptureEnabled = self.mPhotoOutput.livePhotoCaptureSupported;
-        self.mPhotoOutput.depthDataDeliveryEnabled = self.mPhotoOutput.depthDataDeliverySupported;
-        
         
         [self.mSession commitConfiguration];
     }
 }
 
-- (IBAction)takePhotoButtonAction:(id)sender {
-    AVCapturePhotoSettings *photoSettings;
-    if ([self.mPhotoOutput.availablePhotoCodecTypes containsObject:AVVideoCodecTypeHEVC]) {
-        photoSettings = [AVCapturePhotoSettings photoSettingsWithFormat:@{AVVideoCodecKey : AVVideoCodecTypeHEVC}];
-    } else {
-        photoSettings = [AVCapturePhotoSettings photoSettings];
-    }
-    
-    [self.mPhotoOutput capturePhotoWithSettings:photoSettings delegate:self];
-}
 
 - (IBAction)recordButtonAction:(id)sender {
-    NSString *title = self.mMovieOutput.isRecording ? @"Record" : @"Stop";
+    NSString *title = self.mMovieFileOutput.isRecording ? @"Record" : @"Stop";
     [self.myRecordButton setTitle:title forState:UIControlStateNormal];
     
-    if (self.mMovieOutput.isRecording) {
-        [self.mMovieOutput stopRecording];
+    if (self.mMovieFileOutput.isRecording) {
+        [self.mMovieFileOutput stopRecording];
     } else {
-        AVCaptureConnection *movieFileOutputConnection = [self.mMovieOutput connectionWithMediaType:AVMediaTypeVideo];
+        AVCaptureConnection *movieFileOutputConnection = [self.mMovieFileOutput connectionWithMediaType:AVMediaTypeVideo];
         movieFileOutputConnection.videoOrientation = self.myPreviewView.videoPreviewLayer.connection.videoOrientation;
         
         // Use HEVC codec if supported
-        if ([self.mMovieOutput.availableVideoCodecTypes containsObject:AVVideoCodecTypeHEVC]) {
-            [self.mMovieOutput setOutputSettings:@{AVVideoCodecKey : AVVideoCodecTypeHEVC} forConnection:movieFileOutputConnection];
+        if ([self.mMovieFileOutput.availableVideoCodecTypes containsObject:AVVideoCodecTypeHEVC]) {
+            [self.mMovieFileOutput setOutputSettings:@{AVVideoCodecKey : AVVideoCodecTypeHEVC} forConnection:movieFileOutputConnection];
         }
         
         // Start recording to a temporary file
         NSString *outputFileName = [NSUUID UUID].UUIDString;
         NSString *outputFilePath = [NSTemporaryDirectory() stringByAppendingPathComponent:[outputFileName stringByAppendingPathExtension:@"mov"]];
-        [self.mMovieOutput startRecordingToOutputFileURL:[NSURL fileURLWithPath:outputFilePath] recordingDelegate:self];
+        [self.mMovieFileOutput startRecordingToOutputFileURL:[NSURL fileURLWithPath:outputFilePath] recordingDelegate:self];
     }
 }
 
 - (IBAction)cameraButtonAction:(id)sender {
     [self changeCamera];
-}
-
-- (IBAction)captureModeChanged:(UISegmentedControl *)sender {
-    self.mCaptureMode = sender.selectedSegmentIndex == 0 ? HMXCaptureModePhoto : HMXCaptureModeMovie;
-    self.myRecordButton.enabled = self.mCaptureMode == HMXCaptureModeMovie;
-    
-    if (self.mCaptureMode == HMXCaptureModeMovie) {
-        AVCaptureMovieFileOutput *movieFileoutput = [[AVCaptureMovieFileOutput alloc] init];
-        
-        if ([self.mSession canAddOutput:movieFileoutput]) {
-            [self.mSession beginConfiguration];
-            
-            [self.mSession addOutput:movieFileoutput];
-            self.mSession.sessionPreset = AVCaptureSessionPresetHigh;
-            
-            AVCaptureConnection *connection = [movieFileoutput connectionWithMediaType:AVMediaTypeVideo];
-            
-            if (connection.isVideoStabilizationSupported) {
-                connection.preferredVideoStabilizationMode = AVCaptureVideoStabilizationModeAuto;
-            }
-            
-            [self.mSession commitConfiguration];
-            
-            self.mMovieOutput = movieFileoutput;
-        }
-    } else if (self.mCaptureMode == HMXCaptureModePhoto) {
-        [self.mSession beginConfiguration];
-        
-        /*
-         Remove the AVCaptureMovieFileOutput from the session because movie recording is not supported with AVCaptureSessionPresetPhoto.
-         Additionally, Live photo capture is not supported when an AVCaptureMovieFileOutput is connected to the session.
-         */
-        
-        // Remove the AVCaptureMovieFileOutput from the session
-        [self.mSession removeOutput:self.mMovieOutput];
-        self.mSession.sessionPreset = AVCaptureSessionPresetPhoto;
-        self.mMovieOutput = nil;
-        
-        self.mPhotoOutput.livePhotoCaptureEnabled = self.mPhotoOutput.livePhotoCaptureSupported;
-        self.mPhotoOutput.depthDataDeliveryEnabled = self.mPhotoOutput.depthDataDeliverySupported;
-        
-        [self.mSession commitConfiguration];
-    }
-}
-
-
-#pragma mark -- AVCapturePhotoCaptureDelegate
-- (void)captureOutput:(AVCapturePhotoOutput *)output willBeginCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings {
-    NSLog(@"willBeginCaptureForResolvedSettings");
-}
-
-- (void)captureOutput:(AVCapturePhotoOutput *)output willCapturePhotoForResolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings {
-    NSLog(@"willCapturePhotoForResolvedSettings");
-}
-
-- (void)captureOutput:(AVCapturePhotoOutput *)output didCapturePhotoForResolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings {
-    NSLog(@"didCapturePhotoForResolvedSettings");
-}
-
-// A callback fired when photos are ready to be delivered to you (RAW or processed).
-- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhoto:(AVCapturePhoto *)photo error:(NSError *)error {
-    NSLog(@"didFinishProcessingPhoto");
-    
-    if (error != nil) {
-        NSLog(@"didFinishProcessingPhoto Error");
-    }
-    
-    if (photo == nil) {
-        NSLog(@"didFinishProcessingPhoto no photo data");
-    }
-    
-    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-        if (status == PHAuthorizationStatusAuthorized) {
-            [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-                PHAssetResourceCreationOptions *options = [[PHAssetResourceCreationOptions alloc] init];
-//                options.uniformTypeIdentifier =
-                PHAssetCreationRequest *creationRequest = [PHAssetCreationRequest creationRequestForAsset];
-                [creationRequest addResourceWithType:PHAssetResourceTypePhoto data:photo.fileDataRepresentation options:options];
-            } completionHandler:^(BOOL success, NSError * _Nullable error) {
-                if ( ! success ) {
-                    NSLog( @"Error occurred while saving photo to photo library: %@", error );
-                }
-            }];
-        } else {
-            NSLog(@"Not authorized to save photo");
-        }
-    }];
-    
-    
-}
-
-//  A callback fired when the photo capture is completed and no more callbacks will be fired.
-- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings error:(NSError *)error {
-    NSLog(@"didFinishCaptureForResolvedSettings");
-    
-    
-}
-
-- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishRecordingLivePhotoMovieForEventualFileAtURL:(NSURL *)outputFileURL resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings {
-    NSLog(@"didFinishRecordingLivePhotoMovieForEventualFileAtURL");
-}
-
-- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingLivePhotoToMovieFileAtURL:(NSURL *)outputFileURL duration:(CMTime)duration photoDisplayTime:(CMTime)photoDisplayTime resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings error:(NSError *)error {
-    NSLog(@"didFinishProcessingLivePhotoToMovieFileAtURL");
 }
 
 #pragma mark -- AVCaptureFileOutputRecordingDelegate
@@ -337,12 +279,9 @@ typedef NS_ENUM(NSInteger, HMXCaptureMode) {
 }
 
 - (void)captureOutput:(AVCaptureFileOutput *)output didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> *)connections error:(NSError *)error {
-    BOOL recordSuccessfully = YES;
-    if (error.code != noErr) {
-        id value = [error.userInfo objectForKey:AVErrorRecordingSuccessfullyFinishedKey];
-        if (value) {
-            recordSuccessfully = [value boolValue];
-        }
+    if (error) {
+        NSLog(@"Movie file finished error: %@", error);
+        return;
     }
     
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
@@ -353,17 +292,16 @@ typedef NS_ENUM(NSInteger, HMXCaptureMode) {
                 PHAssetCreationRequest *creationRequest = [PHAssetCreationRequest creationRequestForAsset];
                 [creationRequest addResourceWithType:PHAssetResourceTypeVideo fileURL:outputFileURL options:options];
             } completionHandler:^(BOOL success, NSError * _Nullable error) {
-                if ( ! success ) {
-                    NSLog( @"Could not save movie to photo library: %@", error );
+                if (success) {
+                    NSLog(@"Save movie data to photo library succeed");
+                } else {
+                    NSLog(@"Save movie data to photo library failed");
                 }
             }];
+        } else {
+            NSLog(@"Not authorized write movie data to photo library");
         }
     }];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

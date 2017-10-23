@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,61 +22,38 @@
                                 <rect key="frame" x="20" y="120" width="335" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bi9-CC-iPM">
-                                <rect key="frame" x="136" y="579" width="103" height="29"/>
-                                <segments>
-                                    <segment title="Photo"/>
-                                    <segment title="Movie"/>
-                                </segments>
-                                <connections>
-                                    <action selector="captureModeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="3ns-83-lqO"/>
-                                </connections>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ve4-je-Poy">
-                                <rect key="frame" x="167" y="617" width="41" height="30"/>
-                                <state key="normal" title="Photo"/>
-                                <connections>
-                                    <action selector="takePhotoButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y7F-bM-PoO"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZp-6y-Oeg">
                                 <rect key="frame" x="69.5" y="617" width="49" height="30"/>
                                 <state key="normal" title="Record"/>
                                 <connections>
-                                    <action selector="recordButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5m-oN-FFh"/>
+                                    <action selector="recordButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o7U-WC-Axb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5N-Xz-hOL">
                                 <rect key="frame" x="254.5" y="617" width="54" height="30"/>
                                 <state key="normal" title="Camera"/>
                                 <connections>
-                                    <action selector="cameraButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="azR-s8-4Mv"/>
+                                    <action selector="cameraButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gXJ-LL-tiI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ve4-je-Poy" secondAttribute="bottom" constant="20" id="8gu-Br-pb6"/>
                             <constraint firstItem="9I8-v8-QH6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Awk-Qw-OpI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="x5N-Xz-hOL" secondAttribute="bottom" constant="20" id="E4v-5c-Q9Q"/>
-                            <constraint firstItem="bi9-CC-iPM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Thb-XG-OWL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fZp-6y-Oeg" secondAttribute="bottom" constant="20" id="W0S-Fa-whz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9I8-v8-QH6" secondAttribute="bottom" constant="100" id="Wjb-HA-4xJ"/>
                             <constraint firstItem="x5N-Xz-hOL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="3:2" id="boX-kJ-aDJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9I8-v8-QH6" secondAttribute="trailing" constant="20" id="fbM-km-Lmm"/>
-                            <constraint firstItem="ve4-je-Poy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gXT-zU-Sq0"/>
                             <constraint firstItem="fZp-6y-Oeg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1:2" id="ih5-Vr-gEf"/>
                             <constraint firstItem="9I8-v8-QH6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sEL-Qo-VFD"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="bi9-CC-iPM" secondAttribute="bottom" constant="60" id="w8X-pD-nKh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="myCameraButton" destination="x5N-Xz-hOL" id="iqc-tv-kxV"/>
-                        <outlet property="myCaptureModeSegment" destination="bi9-CC-iPM" id="zuA-tK-fgr"/>
-                        <outlet property="myPhotoButton" destination="ve4-je-Poy" id="A8N-m3-Yeh"/>
+                        <outlet property="myCameraButton" destination="x5N-Xz-hOL" id="Ziv-vH-uF7"/>
                         <outlet property="myPreviewView" destination="9I8-v8-QH6" id="rky-Nn-sva"/>
-                        <outlet property="myRecordButton" destination="fZp-6y-Oeg" id="Ccw-dN-Ma6"/>
+                        <outlet property="myRecordButton" destination="fZp-6y-Oeg" id="9v0-mB-0u3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
