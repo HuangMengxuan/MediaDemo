@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tg5-aV-KlX">
+                                <rect key="frame" x="170" y="207.5" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H2h-u3-VXg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1B-Vl-CFg">
+                                <rect key="frame" x="171" y="318.5" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QDz-xZ-gkF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tg5-aV-KlX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="443-Ey-Qpb"/>
+                            <constraint firstItem="tg5-aV-KlX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="2:3" id="6cf-Sa-igc"/>
+                            <constraint firstItem="J1B-Vl-CFg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DZD-eE-oFe"/>
+                            <constraint firstItem="J1B-Vl-CFg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QdM-1y-tcT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Playback View Controller-->
+        <scene sceneID="TqH-93-uCk">
+            <objects>
+                <viewController id="OZO-uP-vJX" customClass="PlaybackViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jaN-RX-SHw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v51-12-uZk">
+                                <rect key="frame" x="172.5" y="207.5" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playButtonAction:" destination="OZO-uP-vJX" eventType="touchUpInside" id="nQV-Xe-4Hb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFB-Ce-DRa">
+                                <rect key="frame" x="171" y="318.5" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopButtonAction:" destination="OZO-uP-vJX" eventType="touchUpInside" id="za6-OS-Hhx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v51-12-uZk" firstAttribute="centerX" secondItem="jaN-RX-SHw" secondAttribute="centerX" id="1bL-nt-gWb"/>
+                            <constraint firstItem="UFB-Ce-DRa" firstAttribute="centerY" secondItem="jaN-RX-SHw" secondAttribute="centerY" id="GtW-3O-Q6v"/>
+                            <constraint firstItem="v51-12-uZk" firstAttribute="centerY" secondItem="jaN-RX-SHw" secondAttribute="centerY" multiplier="2:3" id="RuV-ZX-ahK"/>
+                            <constraint firstItem="UFB-Ce-DRa" firstAttribute="centerX" secondItem="jaN-RX-SHw" secondAttribute="centerX" id="YOQ-T4-sOe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FrN-wT-nTs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KVZ-RY-1CW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="81"/>
+        </scene>
+    </scenes>
+</document>
