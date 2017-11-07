@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA11DD9B1FB00FE2005D25CC /* 思念是一种病-张震岳.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA11DD9A1FB00F80005D25CC /* 思念是一种病-张震岳.mp3 */; };
+		DA11DD9D1FB02822005D25CC /* test1.wav in Resources */ = {isa = PBXBuildFile; fileRef = DA11DD9C1FB0281C005D25CC /* test1.wav */; };
 		DAADC1BF1FAB651E0011FABD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAADC1BE1FAB651E0011FABD /* AppDelegate.m */; };
 		DAADC1C21FAB651E0011FABD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAADC1C11FAB651E0011FABD /* ViewController.m */; };
 		DAADC1C51FAB651E0011FABD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAADC1C31FAB651E0011FABD /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA11DD9A1FB00F80005D25CC /* 思念是一种病-张震岳.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "思念是一种病-张震岳.mp3"; sourceTree = "<group>"; };
+		DA11DD9C1FB0281C005D25CC /* test1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test1.wav; sourceTree = "<group>"; };
 		DAADC1BA1FAB651E0011FABD /* AudioQueueDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioQueueDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAADC1BD1FAB651E0011FABD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DAADC1BE1FAB651E0011FABD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		DAADC1BC1FAB651E0011FABD /* AudioQueueDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DA11DD9C1FB0281C005D25CC /* test1.wav */,
+				DA11DD9A1FB00F80005D25CC /* 思念是一种病-张震岳.mp3 */,
 				DAADC1BD1FAB651E0011FABD /* AppDelegate.h */,
 				DAADC1BE1FAB651E0011FABD /* AppDelegate.m */,
 				DAADC1C01FAB651E0011FABD /* ViewController.h */,
@@ -136,7 +142,9 @@
 			files = (
 				DAADC1CA1FAB651E0011FABD /* LaunchScreen.storyboard in Resources */,
 				DAADC1C71FAB651E0011FABD /* Assets.xcassets in Resources */,
+				DA11DD9B1FB00FE2005D25CC /* 思念是一种病-张震岳.mp3 in Resources */,
 				DAADC1C51FAB651E0011FABD /* Main.storyboard in Resources */,
+				DA11DD9D1FB02822005D25CC /* test1.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +293,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q9WZPGLPG5;
+				DEVELOPMENT_TEAM = 9A4J75PH4A;
 				INFOPLIST_FILE = AudioQueueDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sandy.MediaDemo;
@@ -299,7 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q9WZPGLPG5;
+				DEVELOPMENT_TEAM = 9A4J75PH4A;
 				INFOPLIST_FILE = AudioQueueDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sandy.MediaDemo;

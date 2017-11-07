@@ -70,9 +70,9 @@ OSStatus setMagicCookieForFile (AudioQueueRef inQueue, AudioFileID inFile) {
     OSStatus result = noErr;
     
     // 从音频队列获取魔法饼干的数据大小
-    UInt32 cookieSize = 0;
+    UInt32 cookieSize;
     result = AudioQueueGetPropertySize(inQueue, kAudioQueueProperty_MagicCookie, &cookieSize);
-    if (result != noErr & cookieSize > 0) {
+    if (result != noErr || cookieSize <= 0) {
         return result;
     }
     
@@ -116,11 +116,11 @@ OSStatus setMagicCookieForFile (AudioQueueRef inQueue, AudioFileID inFile) {
     
     AQRecorderState recorderStatus = {0};
     
-    recorderStatus.mDataFormat.mFormatID = kAudioFormatMPEGLayer3;
+    recorderStatus.mDataFormat.mFormatID = kAudioFormatLinearPCM;
     recorderStatus.mDataFormat.mBitsPerChannel = 16;
     recorderStatus.mDataFormat.mChannelsPerFrame = 2;
     recorderStatus.mDataFormat.mBytesPerFrame = recorderStatus.mDataFormat.mChannelsPerFrame * sizeof(SInt16);
-    recorderStatus.mDataFormat.mFramesPerPacket = 1024;
+    recorderStatus.mDataFormat.mFramesPerPacket = 1;
     recorderStatus.mDataFormat.mBytesPerPacket = recorderStatus.mDataFormat.mBytesPerFrame * recorderStatus.mDataFormat.mFramesPerPacket;
     recorderStatus.mDataFormat.mFormatFlags = kLinearPCMFormatFlagIsPacked | kLinearPCMFormatFlagIsSignedInteger;
     recorderStatus.mDataFormat.mSampleRate = 44100.0f;
@@ -128,7 +128,7 @@ OSStatus setMagicCookieForFile (AudioQueueRef inQueue, AudioFileID inFile) {
     self.mRecorderState = recorderStatus;
     
     NSString *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
-    self.mFilePath = [docPath stringByAppendingPathComponent:@"test.aiff"];
+    self.mFilePath = [docPath stringByAppendingPathComponent:@"test.wav"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -138,6 +138,7 @@ OSStatus setMagicCookieForFile (AudioQueueRef inQueue, AudioFileID inFile) {
     [self createAudioQueue];
     _mRecorderState.mBufferBytesSize = [self obtainBufferSizeWithAudioQueue:self.mRecorderState.mQueue audioFromat:self.mRecorderState.mDataFormat seconds:2];
     [self createAudioQueueBuffers];
+    setMagicCookieForFile(self.mRecorderState.mQueue, self.mRecorderState.mAudioFile);
 }
 
 - (void)createAudioQueue {
@@ -153,7 +154,7 @@ OSStatus setMagicCookieForFile (AudioQueueRef inQueue, AudioFileID inFile) {
 
 - (void)createAudioFile {
     NSURL *filePathURL = [NSURL fileURLWithPath:self.mFilePath];
-    OSStatus result = AudioFileCreateWithURL((__bridge CFURLRef)(filePathURL), kAudioFileMP3Type, &_mRecorderState.mDataFormat, kAudioFileFlags_EraseFile, &_mRecorderState.mAudioFile);
+    OSStatus result = AudioFileCreateWithURL((__bridge CFURLRef)(filePathURL), kAudioFileWAVEType, &_mRecorderState.mDataFormat, kAudioFileFlags_EraseFile, &_mRecorderState.mAudioFile);
     if (result != noErr) {
         NSLog(@"failed while create audio file");
         
@@ -161,7 +162,6 @@ OSStatus setMagicCookieForFile (AudioQueueRef inQueue, AudioFileID inFile) {
         // 如果文件格式是kAudioFileWAVEType，recorderStatus.mDataFormat.mFormatFlags必须是小端存储的
         // 如果recorderStatus.mDataFormat.mChannelsPerFrame大于2，会当做1个声道的来处理
         // 如果文件格式是kAudioFileAIFFType，recorderStatus.mDataFormat.mFormatFlags必须是大端存储的
-        
     }
 }
 

@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA11DD7F1FAD6C67005D25CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA11DD7E1FAD6C67005D25CC /* AppDelegate.m */; };
+		DA11DD821FAD6C67005D25CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA11DD811FAD6C67005D25CC /* ViewController.m */; };
+		DA11DD851FAD6C68005D25CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA11DD831FAD6C68005D25CC /* Main.storyboard */; };
+		DA11DD871FAD6C68005D25CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA11DD861FAD6C68005D25CC /* Assets.xcassets */; };
+		DA11DD8A1FAD6C68005D25CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA11DD881FAD6C68005D25CC /* LaunchScreen.storyboard */; };
+		DA11DD8D1FAD6C68005D25CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA11DD8C1FAD6C68005D25CC /* main.m */; };
+		DA11DD941FAD6CA3005D25CC /* 思念是一种病-张震岳.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DA11DD931FAD6C9E005D25CC /* 思念是一种病-张震岳.mp3 */; };
+		DA11DD991FADB6AA005D25CC /* HMXAudioFileStream.m in Sources */ = {isa = PBXBuildFile; fileRef = DA11DD981FADB6AA005D25CC /* HMXAudioFileStream.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DA11DD7A1FAD6C67005D25CC /* AudioFileStreamDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioFileStreamDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA11DD7D1FAD6C67005D25CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA11DD7E1FAD6C67005D25CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DA11DD801FAD6C67005D25CC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DA11DD811FAD6C67005D25CC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DA11DD841FAD6C68005D25CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA11DD861FAD6C68005D25CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA11DD891FAD6C68005D25CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA11DD8B1FAD6C68005D25CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA11DD8C1FAD6C68005D25CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA11DD931FAD6C9E005D25CC /* 思念是一种病-张震岳.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "思念是一种病-张震岳.mp3"; sourceTree = "<group>"; };
+		DA11DD971FADB6AA005D25CC /* HMXAudioFileStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMXAudioFileStream.h; sourceTree = "<group>"; };
+		DA11DD981FADB6AA005D25CC /* HMXAudioFileStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMXAudioFileStream.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA11DD771FAD6C67005D25CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA11DD711FAD6C67005D25CC = {
+			isa = PBXGroup;
+			children = (
+				DA11DD7C1FAD6C67005D25CC /* AudioFileStreamDemo */,
+				DA11DD7B1FAD6C67005D25CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA11DD7B1FAD6C67005D25CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA11DD7A1FAD6C67005D25CC /* AudioFileStreamDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA11DD7C1FAD6C67005D25CC /* AudioFileStreamDemo */ = {
+			isa = PBXGroup;
+			children = (
+				DA11DD931FAD6C9E005D25CC /* 思念是一种病-张震岳.mp3 */,
+				DA11DD7D1FAD6C67005D25CC /* AppDelegate.h */,
+				DA11DD7E1FAD6C67005D25CC /* AppDelegate.m */,
+				DA11DD971FADB6AA005D25CC /* HMXAudioFileStream.h */,
+				DA11DD981FADB6AA005D25CC /* HMXAudioFileStream.m */,
+				DA11DD801FAD6C67005D25CC /* ViewController.h */,
+				DA11DD811FAD6C67005D25CC /* ViewController.m */,
+				DA11DD831FAD6C68005D25CC /* Main.storyboard */,
+				DA11DD861FAD6C68005D25CC /* Assets.xcassets */,
+				DA11DD881FAD6C68005D25CC /* LaunchScreen.storyboard */,
+				DA11DD8B1FAD6C68005D25CC /* Info.plist */,
+				DA11DD8C1FAD6C68005D25CC /* main.m */,
+			);
+			path = AudioFileStreamDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA11DD791FAD6C67005D25CC /* AudioFileStreamDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA11DD901FAD6C68005D25CC /* Build configuration list for PBXNativeTarget "AudioFileStreamDemo" */;
+			buildPhases = (
+				DA11DD761FAD6C67005D25CC /* Sources */,
+				DA11DD771FAD6C67005D25CC /* Frameworks */,
+				DA11DD781FAD6C67005D25CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AudioFileStreamDemo;
+			productName = AudioFileStreamDemo;
+			productReference = DA11DD7A1FAD6C67005D25CC /* AudioFileStreamDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA11DD721FAD6C67005D25CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = sonirock;
+				TargetAttributes = {
+					DA11DD791FAD6C67005D25CC = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DA11DD751FAD6C67005D25CC /* Build configuration list for PBXProject "AudioFileStreamDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA11DD711FAD6C67005D25CC;
+			productRefGroup = DA11DD7B1FAD6C67005D25CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA11DD791FAD6C67005D25CC /* AudioFileStreamDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA11DD781FAD6C67005D25CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA11DD8A1FAD6C68005D25CC /* LaunchScreen.storyboard in Resources */,
+				DA11DD871FAD6C68005D25CC /* Assets.xcassets in Resources */,
+				DA11DD941FAD6CA3005D25CC /* 思念是一种病-张震岳.mp3 in Resources */,
+				DA11DD851FAD6C68005D25CC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA11DD761FAD6C67005D25CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA11DD821FAD6C67005D25CC /* ViewController.m in Sources */,
+				DA11DD8D1FAD6C68005D25CC /* main.m in Sources */,
+				DA11DD991FADB6AA005D25CC /* HMXAudioFileStream.m in Sources */,
+				DA11DD7F1FAD6C67005D25CC /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DA11DD831FAD6C68005D25CC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA11DD841FAD6C68005D25CC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DA11DD881FAD6C68005D25CC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA11DD891FAD6C68005D25CC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA11DD8E1FAD6C68005D25CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DA11DD8F1FAD6C68005D25CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA11DD911FAD6C68005D25CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9A4J75PH4A;
+				INFOPLIST_FILE = AudioFileStreamDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sonirock.sonicam-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA11DD921FAD6C68005D25CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9A4J75PH4A;
+				INFOPLIST_FILE = AudioFileStreamDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sonirock.sonicam-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA11DD751FAD6C67005D25CC /* Build configuration list for PBXProject "AudioFileStreamDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA11DD8E1FAD6C68005D25CC /* Debug */,
+				DA11DD8F1FAD6C68005D25CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA11DD901FAD6C68005D25CC /* Build configuration list for PBXNativeTarget "AudioFileStreamDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA11DD911FAD6C68005D25CC /* Debug */,
+				DA11DD921FAD6C68005D25CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA11DD721FAD6C67005D25CC /* Project object */;
+}
