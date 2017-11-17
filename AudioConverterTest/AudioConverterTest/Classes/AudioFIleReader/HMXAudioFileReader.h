@@ -18,15 +18,17 @@
 
 @interface HMXAudioFileReader : NSObject
 
-@property (strong, nonatomic, readonly) NSURL *fileURL;
-@property (assign, nonatomic, readonly) AudioFileTypeID audioFileType;
-@property (assign, nonatomic, readonly) AudioStreamBasicDescription audioFormat;
-@property (assign, nonatomic, readonly) NSData *magicData;
+@property (strong, nonatomic) NSURL *fileURL;
+@property (assign, nonatomic) AudioFileTypeID audioFileType;
+@property (assign, nonatomic) AudioStreamBasicDescription audioFormat;
+@property (assign, nonatomic) NSData *magicData;
 
 @property (weak, nonatomic) id<HMXAudioFileReaderDelegate> delegate;
 
 - (instancetype)initWithFileURL:(NSURL *)fileURL fileType:(AudioFileTypeID)fileType;
 
 - (BOOL)configureAudioFileReader;
+
+- (void)startParse;
 
 @end

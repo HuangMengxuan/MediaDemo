@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA11AFDD1FBD642600ADF9C9 /* HMXAudioDataPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = DA11AFDC1FBD642600ADF9C9 /* HMXAudioDataPacket.m */; };
 		DA8933FE1FB970E1000CE52F /* HMXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8933FD1FB970E1000CE52F /* HMXAppDelegate.m */; };
 		DA8934011FB970E1000CE52F /* HMXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8934001FB970E1000CE52F /* HMXViewController.m */; };
 		DA8934041FB970E1000CE52F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8934021FB970E1000CE52F /* Main.storyboard */; };
@@ -15,11 +16,13 @@
 		DA89340C1FB970E1000CE52F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA89340B1FB970E1000CE52F /* main.m */; };
 		DA89342E1FB9922E000CE52F /* HMXAudioFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA89342B1FB99229000CE52F /* HMXAudioFileReader.m */; };
 		DA89342F1FB99230000CE52F /* HMXAudioFileStreamReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA89342D1FB99229000CE52F /* HMXAudioFileStreamReader.m */; };
-		DA8934321FB992CB000CE52F /* HMXAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8934311FB992CA000CE52F /* HMXAudioFile.m */; };
 		DA8934361FB992FD000CE52F /* HMXAudioConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8934351FB992FB000CE52F /* HMXAudioConverter.m */; };
+		DAB6E4FD1FBC0E72000D7BD4 /* HMXAudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB6E4FC1FBC0E72000D7BD4 /* HMXAudioFileWriter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA11AFDB1FBD642600ADF9C9 /* HMXAudioDataPacket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMXAudioDataPacket.h; sourceTree = "<group>"; };
+		DA11AFDC1FBD642600ADF9C9 /* HMXAudioDataPacket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMXAudioDataPacket.m; sourceTree = "<group>"; };
 		DA8933F91FB970E1000CE52F /* AudioConverterTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioConverterTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8933FC1FB970E1000CE52F /* HMXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMXAppDelegate.h; sourceTree = "<group>"; };
 		DA8933FD1FB970E1000CE52F /* HMXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMXAppDelegate.m; sourceTree = "<group>"; };
@@ -34,10 +37,10 @@
 		DA89342B1FB99229000CE52F /* HMXAudioFileReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMXAudioFileReader.m; sourceTree = "<group>"; };
 		DA89342C1FB99229000CE52F /* HMXAudioFileStreamReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMXAudioFileStreamReader.h; sourceTree = "<group>"; };
 		DA89342D1FB99229000CE52F /* HMXAudioFileStreamReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMXAudioFileStreamReader.m; sourceTree = "<group>"; };
-		DA8934301FB992CA000CE52F /* HMXAudioFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMXAudioFile.h; sourceTree = "<group>"; };
-		DA8934311FB992CA000CE52F /* HMXAudioFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMXAudioFile.m; sourceTree = "<group>"; };
 		DA8934341FB992FB000CE52F /* HMXAudioConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMXAudioConverter.h; sourceTree = "<group>"; };
 		DA8934351FB992FB000CE52F /* HMXAudioConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMXAudioConverter.m; sourceTree = "<group>"; };
+		DAB6E4FB1FBC0E72000D7BD4 /* HMXAudioFileWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMXAudioFileWriter.h; sourceTree = "<group>"; };
+		DAB6E4FC1FBC0E72000D7BD4 /* HMXAudioFileWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMXAudioFileWriter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +92,9 @@
 			children = (
 				DA8934331FB992DD000CE52F /* AudioConverter */,
 				DA8934291FB99229000CE52F /* AudioFileReader */,
-				DA8934301FB992CA000CE52F /* HMXAudioFile.h */,
-				DA8934311FB992CA000CE52F /* HMXAudioFile.m */,
+				DAB6E4FA1FBC0E52000D7BD4 /* AudioFileWriter */,
+				DA11AFDB1FBD642600ADF9C9 /* HMXAudioDataPacket.h */,
+				DA11AFDC1FBD642600ADF9C9 /* HMXAudioDataPacket.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -113,6 +117,15 @@
 				DA8934351FB992FB000CE52F /* HMXAudioConverter.m */,
 			);
 			path = AudioConverter;
+			sourceTree = "<group>";
+		};
+		DAB6E4FA1FBC0E52000D7BD4 /* AudioFileWriter */ = {
+			isa = PBXGroup;
+			children = (
+				DAB6E4FB1FBC0E72000D7BD4 /* HMXAudioFileWriter.h */,
+				DAB6E4FC1FBC0E72000D7BD4 /* HMXAudioFileWriter.m */,
+			);
+			path = AudioFileWriter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,13 +200,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA11AFDD1FBD642600ADF9C9 /* HMXAudioDataPacket.m in Sources */,
 				DA8934011FB970E1000CE52F /* HMXViewController.m in Sources */,
 				DA89342F1FB99230000CE52F /* HMXAudioFileStreamReader.m in Sources */,
 				DA89340C1FB970E1000CE52F /* main.m in Sources */,
 				DA8934361FB992FD000CE52F /* HMXAudioConverter.m in Sources */,
 				DA8933FE1FB970E1000CE52F /* HMXAppDelegate.m in Sources */,
+				DAB6E4FD1FBC0E72000D7BD4 /* HMXAudioFileWriter.m in Sources */,
 				DA89342E1FB9922E000CE52F /* HMXAudioFileReader.m in Sources */,
-				DA8934321FB992CB000CE52F /* HMXAudioFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

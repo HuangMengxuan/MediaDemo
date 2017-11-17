@@ -1,13 +1,13 @@
 //
-//  HMXAudioFIle.h
+//  HMXAudioDataPacket.h
 //  AudioConverterTest
 //
-//  Created by lsyy on 2017/11/13.
+//  Created by lsyy on 2017/11/16.
 //  Copyright © 2017年 sonirock. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface HMXAudioFile : NSObject
+@interface HMXAudioDataPacket : NSObject
 
 @end

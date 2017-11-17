@@ -10,10 +10,6 @@
 
 @interface HMXAudioFileReader ()
 
-@property (strong, nonatomic, readwrite) NSURL *fileURL;
-@property (assign, nonatomic, readwrite) AudioFileTypeID audioFileType;
-@property (assign, nonatomic, readwrite) AudioStreamBasicDescription audioFormat;
-
 @end
 
 @implementation HMXAudioFileReader
@@ -22,12 +18,17 @@
     if (self = [super init]) {
         _audioFileType = fileType;
         _fileURL = fileURL;
+//        [self configureAudioFileReader];
     }
     return self;
 }
 
 - (BOOL)configureAudioFileReader {
     return NO;
+}
+
+- (void)startParse {
+    
 }
 
 @end

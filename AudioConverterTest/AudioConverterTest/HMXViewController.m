@@ -7,8 +7,11 @@
 //
 
 #import "HMXViewController.h"
+#import "HMXAudioFileStreamReader.h"
+#import "HMXAudioConverter.h"
+#import "HMXAudioFileWriter.h"
 
-@interface HMXViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface HMXViewController () <UITableViewDelegate, UITableViewDataSource, HMXAudioFileReaderDelegate, HMXAudioConverterDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *myReaderSegment;
@@ -17,6 +20,12 @@
 
 @property (strong, nonatomic) NSMutableArray<NSString *> *mFilePaths;
 @property (copy, nonatomic) NSString *mCurrentPath;
+
+
+@property (strong, nonatomic) HMXAudioFileReader *mAudioFileReader;
+@property (strong, nonatomic) HMXAudioConverter *mAudioConverter;
+@property (strong, nonatomic) HMXAudioFileWriter *mAudioFileWriter;
+
 
 @end
 
@@ -54,7 +63,23 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.mCurrentPath = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    self.mCurrentPath = self.mFilePaths[indexPath.row];
+}
+
+#pragma mark -- HMXAudioFileReaderDelegate
+- (void)audioFileReader:(HMXAudioFileReader *)aduioFileReader didLoadAudioPackets:(const void *)packetsData numberBytes:(UInt32)numberBytes packetDescriptions:(AudioStreamPacketDescription *)packetDescriptions numberPackets:(UInt32)numberPackets {
+    if (self.mAudioConverter == nil) {
+        AudioStreamBasicDescription destinationASBD = {44100.0f, kAudioFormatLinearPCM, (kLinearPCMFormatFlagIsPacked | kLinearPCMFormatFlagIsSignedInteger), 4, 1, 4, 2, 16, 0};
+        self.mAudioConverter = [[HMXAudioConverter alloc] initWithSourceASBD:aduioFileReader.audioFormat destinationASBD:destinationASBD];
+        self.mAudioConverter.delegate = self;
+        [self.mAudioConverter initializeAudioConverter];
+    }
+    [self.mAudioConverter convertAudioData:(void *)packetsData audioDataLength:numberBytes packetDescriptions:packetDescriptions numberPackets:numberPackets];
+}
+
+#pragma mark -- HMXAudioConverterDelegate
+- (void)audioConverter:(HMXAudioConverter *)audioConverter didConverterAudioData:(void *)audioData dataSize:(UInt32)dataSize packetDescriptions:(AudioStreamPacketDescription *)packetDescriptions numberPackets:(UInt32)numberPackets {
+    [self.mAudioFileWriter writeAudioDataWithAudioData:audioData dataSize:dataSize packetDescriptions:packetDescriptions packetNum:numberPackets];
 }
 
 - (IBAction)startButtonAction:(id)sender {
@@ -63,14 +88,26 @@
     }
     
     NSString *extension = [self.mCurrentPath pathExtension];
-    if ([extension isEqualToString:@"pcm"] || [extension isEqualToString:@"wav"]) {
+    if ([extension isEqualToString:@"pcm"] /*|| [extension isEqualToString:@"wav"]*/) {
         // 编码
     } else {
         // 解码
+        self.mAudioFileReader = [[HMXAudioFileStreamReader alloc] initWithFileURL:[NSURL fileURLWithPath:self.mCurrentPath] fileType:0];
+        self.mAudioFileReader.delegate = self;
+        [self.mAudioFileReader configureAudioFileReader];
+        [self.mAudioFileReader startParse];
+        
+        NSString *path = [self.mCurrentPath.stringByDeletingPathExtension stringByAppendingPathExtension:@"wav"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        CFURLRef urlRef = (__bridge CFURLRef)(url);
+        AudioStreamBasicDescription destinationASBD = {44100.0f, kAudioFormatLinearPCM, (kLinearPCMFormatFlagIsPacked | kLinearPCMFormatFlagIsSignedInteger), 4, 1, 4, 2, 16, 0};
+        self.mAudioFileWriter = [[HMXAudioFileWriter alloc] initWithAudioFileType:kAudioFileWAVEType audioFormat:destinationASBD audioFileURL:urlRef];
+        CFRelease(urlRef);
     }
 }
 
 - (IBAction)stopButtonAction:(id)sender {
+    [self.mAudioFileWriter optimizeAudioFile];
 }
 
 @end
