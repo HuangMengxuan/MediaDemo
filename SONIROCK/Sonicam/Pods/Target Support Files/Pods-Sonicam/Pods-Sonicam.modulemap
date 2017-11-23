@@ -1,0 +1,6 @@
+framework module Pods_Sonicam {
+  umbrella header "Pods-Sonicam-umbrella.h"
+
+  export *
+  module * { export * }
+}

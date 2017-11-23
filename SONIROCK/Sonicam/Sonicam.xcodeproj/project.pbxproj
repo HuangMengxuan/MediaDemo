@@ -1,0 +1,571 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA11AFED1FC67E9A00ADF9C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11AFEC1FC67E9A00ADF9C9 /* AppDelegate.swift */; };
+		DA11AFEF1FC67E9A00ADF9C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11AFEE1FC67E9A00ADF9C9 /* ViewController.swift */; };
+		DA11AFF21FC67E9A00ADF9C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA11AFF01FC67E9A00ADF9C9 /* Main.storyboard */; };
+		DA11AFF41FC67E9A00ADF9C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA11AFF31FC67E9A00ADF9C9 /* Assets.xcassets */; };
+		DA11AFF71FC67E9A00ADF9C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA11AFF51FC67E9A00ADF9C9 /* LaunchScreen.storyboard */; };
+		DAD0CBF61FC6C55200ABA309 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0CBF51FC6C55200ABA309 /* HomeViewController.swift */; };
+		DAD0CBF81FC6CE2E00ABA309 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0CBF71FC6CE2E00ABA309 /* HomeView.swift */; };
+		DAD0CBFE1FC6E30500ABA309 /* bitmap360.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAD0CBFD1FC6E30300ABA309 /* bitmap360.jpg */; };
+		EFBFA56ED737DD00D1D7766D /* Pods_Sonicam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7539EEC5184DDCE565041E26 /* Pods_Sonicam.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7539EEC5184DDCE565041E26 /* Pods_Sonicam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sonicam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D071AD2CBCD3EBC5B6ECDA1 /* Pods-Sonicam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sonicam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sonicam/Pods-Sonicam.debug.xcconfig"; sourceTree = "<group>"; };
+		DA11AFE91FC67E9A00ADF9C9 /* Sonicam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sonicam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA11AFEC1FC67E9A00ADF9C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DA11AFEE1FC67E9A00ADF9C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA11AFF11FC67E9A00ADF9C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA11AFF31FC67E9A00ADF9C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA11AFF61FC67E9A00ADF9C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA11AFF81FC67E9A00ADF9C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAD0CBF51FC6C55200ABA309 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DAD0CBF71FC6CE2E00ABA309 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DAD0CBFD1FC6E30300ABA309 /* bitmap360.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bitmap360.jpg; sourceTree = "<group>"; };
+		FFFEFA896612A3173F324CD1 /* Pods-Sonicam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sonicam.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sonicam/Pods-Sonicam.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA11AFE61FC67E9A00ADF9C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFBFA56ED737DD00D1D7766D /* Pods_Sonicam.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F54A8125475495E93881591 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7539EEC5184DDCE565041E26 /* Pods_Sonicam.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		591FC7EDF542220ECD628BAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D071AD2CBCD3EBC5B6ECDA1 /* Pods-Sonicam.debug.xcconfig */,
+				FFFEFA896612A3173F324CD1 /* Pods-Sonicam.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DA11AFE01FC67E9A00ADF9C9 = {
+			isa = PBXGroup;
+			children = (
+				DA11AFEB1FC67E9A00ADF9C9 /* Sonicam */,
+				DA11AFEA1FC67E9A00ADF9C9 /* Products */,
+				591FC7EDF542220ECD628BAA /* Pods */,
+				3F54A8125475495E93881591 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DA11AFEA1FC67E9A00ADF9C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA11AFE91FC67E9A00ADF9C9 /* Sonicam.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA11AFEB1FC67E9A00ADF9C9 /* Sonicam */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0CBE71FC6B45800ABA309 /* Resource */,
+				DAD0CBE61FC6B44E00ABA309 /* Vender */,
+				DAD0CBE51FC6B42600ABA309 /* Expand */,
+				DAD0CBE41FC6B41500ABA309 /* Main */,
+				DA11AFEC1FC67E9A00ADF9C9 /* AppDelegate.swift */,
+				DA11AFEE1FC67E9A00ADF9C9 /* ViewController.swift */,
+				DA11AFF01FC67E9A00ADF9C9 /* Main.storyboard */,
+				DA11AFF31FC67E9A00ADF9C9 /* Assets.xcassets */,
+				DA11AFF51FC67E9A00ADF9C9 /* LaunchScreen.storyboard */,
+				DA11AFF81FC67E9A00ADF9C9 /* Info.plist */,
+			);
+			path = Sonicam;
+			sourceTree = "<group>";
+		};
+		DAD0CBE41FC6B41500ABA309 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0CBF11FC6B4F400ABA309 /* Other */,
+				DAD0CBF01FC6B4E100ABA309 /* Home */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DAD0CBE51FC6B42600ABA309 /* Expand */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0CBEF1FC6B4C000ABA309 /* Const */,
+				DAD0CBEE1FC6B4AD00ABA309 /* Macros */,
+				DAD0CBED1FC6B4A500ABA309 /* Tool */,
+				DAD0CBEC1FC6B49900ABA309 /* Network */,
+				DAD0CBEB1FC6B48A00ABA309 /* Category */,
+			);
+			path = Expand;
+			sourceTree = "<group>";
+		};
+		DAD0CBE61FC6B44E00ABA309 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		DAD0CBE71FC6B45800ABA309 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0CBEA1FC6B47A00ABA309 /* Interface */,
+				DAD0CBE91FC6B47300ABA309 /* Image */,
+				DAD0CBE81FC6B46800ABA309 /* PList */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DAD0CBE81FC6B46800ABA309 /* PList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PList;
+			sourceTree = "<group>";
+		};
+		DAD0CBE91FC6B47300ABA309 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0CBFD1FC6E30300ABA309 /* bitmap360.jpg */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		DAD0CBEA1FC6B47A00ABA309 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		DAD0CBEB1FC6B48A00ABA309 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		DAD0CBEC1FC6B49900ABA309 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DAD0CBED1FC6B4A500ABA309 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		DAD0CBEE1FC6B4AD00ABA309 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Macros;
+			sourceTree = "<group>";
+		};
+		DAD0CBEF1FC6B4C000ABA309 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		DAD0CBF01FC6B4E100ABA309 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0CBF51FC6C55200ABA309 /* HomeViewController.swift */,
+				DAD0CBF71FC6CE2E00ABA309 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DAD0CBF11FC6B4F400ABA309 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0CBF41FC6B52900ABA309 /* Public */,
+				DAD0CBF31FC6B51C00ABA309 /* Navigation */,
+				DAD0CBF21FC6B4FA00ABA309 /* TabBar */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		DAD0CBF21FC6B4FA00ABA309 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		DAD0CBF31FC6B51C00ABA309 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		DAD0CBF41FC6B52900ABA309 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA11AFE81FC67E9A00ADF9C9 /* Sonicam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA11AFFB1FC67E9A00ADF9C9 /* Build configuration list for PBXNativeTarget "Sonicam" */;
+			buildPhases = (
+				0E1834678D429162204C0AE8 /* [CP] Check Pods Manifest.lock */,
+				DA11AFE51FC67E9A00ADF9C9 /* Sources */,
+				DA11AFE61FC67E9A00ADF9C9 /* Frameworks */,
+				DA11AFE71FC67E9A00ADF9C9 /* Resources */,
+				CD969EA32813724A05A3E281 /* [CP] Embed Pods Frameworks */,
+				D1E0640D3FCC98FD5699511C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sonicam;
+			productName = Sonicam;
+			productReference = DA11AFE91FC67E9A00ADF9C9 /* Sonicam.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA11AFE11FC67E9A00ADF9C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = "";
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = sonirock;
+				TargetAttributes = {
+					DA11AFE81FC67E9A00ADF9C9 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DA11AFE41FC67E9A00ADF9C9 /* Build configuration list for PBXProject "Sonicam" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA11AFE01FC67E9A00ADF9C9;
+			productRefGroup = DA11AFEA1FC67E9A00ADF9C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA11AFE81FC67E9A00ADF9C9 /* Sonicam */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA11AFE71FC67E9A00ADF9C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA11AFF71FC67E9A00ADF9C9 /* LaunchScreen.storyboard in Resources */,
+				DA11AFF41FC67E9A00ADF9C9 /* Assets.xcassets in Resources */,
+				DAD0CBFE1FC6E30500ABA309 /* bitmap360.jpg in Resources */,
+				DA11AFF21FC67E9A00ADF9C9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E1834678D429162204C0AE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sonicam-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD969EA32813724A05A3E281 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sonicam/Pods-Sonicam-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sonicam/Pods-Sonicam-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1E0640D3FCC98FD5699511C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sonicam/Pods-Sonicam-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA11AFE51FC67E9A00ADF9C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAD0CBF61FC6C55200ABA309 /* HomeViewController.swift in Sources */,
+				DAD0CBF81FC6CE2E00ABA309 /* HomeView.swift in Sources */,
+				DA11AFEF1FC67E9A00ADF9C9 /* ViewController.swift in Sources */,
+				DA11AFED1FC67E9A00ADF9C9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DA11AFF01FC67E9A00ADF9C9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA11AFF11FC67E9A00ADF9C9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DA11AFF51FC67E9A00ADF9C9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA11AFF61FC67E9A00ADF9C9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA11AFF91FC67E9A00ADF9C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DA11AFFA1FC67E9A00ADF9C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA11AFFC1FC67E9A00ADF9C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D071AD2CBCD3EBC5B6ECDA1 /* Pods-Sonicam.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Sonicam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sonirock.Sonicam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA11AFFD1FC67E9A00ADF9C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFFEFA896612A3173F324CD1 /* Pods-Sonicam.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Sonicam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sonirock.Sonicam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA11AFE41FC67E9A00ADF9C9 /* Build configuration list for PBXProject "Sonicam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA11AFF91FC67E9A00ADF9C9 /* Debug */,
+				DA11AFFA1FC67E9A00ADF9C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA11AFFB1FC67E9A00ADF9C9 /* Build configuration list for PBXNativeTarget "Sonicam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA11AFFC1FC67E9A00ADF9C9 /* Debug */,
+				DA11AFFD1FC67E9A00ADF9C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA11AFE11FC67E9A00ADF9C9 /* Project object */;
+}
