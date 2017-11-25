@@ -19,6 +19,8 @@ class HomeViewController: UIViewController {
         
         title = "HomePage"
         
+        navigationController?.isNavigationBarHidden = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,5 +28,4 @@ class HomeViewController: UIViewController {
             constraint.edges.equalToSuperview()
         }
     }
-    
 }
